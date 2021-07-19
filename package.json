@@ -1,0 +1,22 @@
+{
+  "name": "product-manager-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Abdeali Jaroli",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.0.0",
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
