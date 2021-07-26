@@ -3,7 +3,6 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const dbConnect = require('./db/connect')
 const { urlencoded } = require('express');
-const { createProduct } = require('./controller/productController');
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;

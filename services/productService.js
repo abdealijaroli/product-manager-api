@@ -1,6 +1,6 @@
 const Product = require('../db/models/productModel')
 
-// can reuse. passing the req.body parameter from producController and it interacts with the database and saves it there
+// can reuse. business logic. passing the req.body parameter from producController and it interacts with the database and saves it there
 module.exports.createProduct = async(serviceData) => {
     try {
         const product = new Product({...serviceData });
