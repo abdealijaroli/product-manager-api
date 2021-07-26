@@ -8,7 +8,7 @@ module.exports.createProduct = async(req, res) => {
         // creates the product and saves it to the database
         let responseFromService = await productService.createProduct(req.body);
         response.status = 200;
-        response.message = '';
+        response.message = constants.productMessage.PRODUCT_CREATED;
         response.body = responseFromService;
     } catch (error) {
         console.log('Error: Controller: createProduct:', error);
