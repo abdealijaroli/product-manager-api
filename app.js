@@ -21,7 +21,7 @@ app.use(urlencoded({ extended: true }));
 app.use('/api/v1/product', require('./routes/productRoutes'))
 
 app.get('/', (req, res, next) => {
-    res.send('hola');
+    res.send('Test');
 });
 
 // error handler middleware
