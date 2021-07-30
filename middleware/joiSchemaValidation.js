@@ -1,7 +1,7 @@
 const productSchema = require('../apiSchema/productSchema')
 
 const validateObjectSchema = (data) => {
-    const result = productSchema.createProductSchema.validate(data);
+    const result = productSchema.createProductSchema.validate(data, { convert: false });
 }
 
 module.exports.validateBody = () => {
