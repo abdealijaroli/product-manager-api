@@ -1,4 +1,4 @@
-const productSchema = require('../apiSchema/productSchema')
+const productSchema = require('../api_schema/productSchema')
 const constants = require('../constants/index')
 
 const validateObjectSchema = (data) => {
