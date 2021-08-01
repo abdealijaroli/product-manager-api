@@ -14,9 +14,18 @@ router.get('/:id',
     productController.getProductById
 );
 
+router.put('/:id',
+    joiSchemaValidation.validateUpdateProductSchema(productSchema.updateProductSchema),
+    productController.updateProduct
+)
+
 router.get('/',
     joiSchemaValidation.validateQueryParams(productSchema.getAllProducts),
     productController.getAllProducts
 );
+
+router.delete('/:id',
+    productController.deleteProduct
+)
 
 module.exports = router;

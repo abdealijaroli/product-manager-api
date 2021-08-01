@@ -5,9 +5,11 @@ module.exports = {
         body: {}
     },
     productMessage: {
-        PRODUCT_CREATED: 'Product created successfully!',
-        PRODUCT_FETCHED: 'Product fetched successfully!',
-        PRODUCT_NOT_FOUND: 'Product not found!'
+        PRODUCT_CREATED: 'Product Created Successfully!',
+        PRODUCT_FETCHED: 'Product Fetched Successfully!',
+        PRODUCT_UPDATE: 'Product Updated Successfully!',
+        PRODUCT_DELETED: 'Product Deleted Successfully.',
+        PRODUCT_NOT_FOUND: 'Product Not Found.'
     },
     requestValidationMessage: {
         BAD_REQUEST: 'Invalid field'

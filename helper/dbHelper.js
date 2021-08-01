@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const constants = require('../constants/index')
+mongoose.set('useFindAndModify', false);
 
 module.exports.formatMongoData = (data) => {
     if (Array.isArray(data)) {
