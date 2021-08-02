@@ -2,6 +2,7 @@
 
 An MVC Rest API built using Node.js, Express.js & MongoDB. Secured with JWT, and documented using Swagger.
 
+
 1. Format of the .env file:
   > PORT=<br>
   > DB_URL=<br>

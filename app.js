@@ -10,7 +10,7 @@ dotEnv.config();
 
 const app = express();
 
-// db connectivity
+// db connectivity 
 dbConnect();
 
 // cors
