@@ -1,41 +1,49 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const dotEnv = require('dotenv');
 const cors = require('cors');
-const dbConnect = require('./db/connect')
-const { urlencoded } = require('express');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
+const dbConnection = require('./database/connection');
 
-dotenv.config();
-const PORT = process.env.PORT || 3000;
+dotEnv.config();
+
 const app = express();
 
-// database connection
-dbConnect();
+// db connectivity
+dbConnection();
 
-// cors 
+// cors
 app.use(cors());
 
-// global request payload middleware
+// request payload middleware
 app.use(express.json());
-app.use(urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/product', require('./routes/productRoutes'));
 app.use('/api/v1/user', require('./routes/userRoutes'));
 
+// API Documentation
+if (process.env.NODE_ENV != 'production') {
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}
+
 app.get('/', (req, res, next) => {
-    res.send('Test');
+    res.send('Hello from Node API Server');
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });
 
 // error handler middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
+app.use(function(err, req, res, next) {
+    console.error(err.stack)
     res.status(500).send({
         status: 500,
         message: err.message,
         body: {}
     });
-});
-
-// listen
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
 })
