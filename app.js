@@ -4,14 +4,14 @@ const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
-const dbConnection = require('./database/connection');
+const dbConnect = require('./db/connect');
 
 dotEnv.config();
 
 const app = express();
 
 // db connectivity
-dbConnection();
+dbConnect();
 
 // cors
 app.use(cors());
